@@ -482,7 +482,7 @@ section:nth-child(even) {
     color: var(--morado-claro);
 }
 
-/* Botón scroll to top */
+
 .boton-inicio {
     position: fixed;
     bottom: 30px;

@@ -1,4 +1,3 @@
-// Animación de escritura para el título principal
 function escribirTexto(elemento, texto, velocidad = 100) {
     let i = 0;
     elemento.textContent = '';
@@ -13,7 +12,7 @@ function escribirTexto(elemento, texto, velocidad = 100) {
     }, velocidad);
 }
 
-// Efecto de scroll suave para todos los enlaces que apuntan a secciones
+
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -37,7 +36,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     });
 });
 
-// Cambio de estilo de la barra superior al hacer scroll
+
 window.addEventListener('scroll', () => {
     const barra = document.querySelector('.barra-superior');
     const botonInicio = document.querySelector('.boton-inicio');
@@ -51,7 +50,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Animación de aparición de elementos al hacer scroll
+
 const observador = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -63,14 +62,14 @@ const observador = new IntersectionObserver((entries) => {
     threshold: 0.1
 });
 
-// Aplicar animación a todas las habilidades, proyectos y contactos
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Animación de escritura en el título principal
+    
     const tituloPrincipal = document.querySelector('.inicio h1');
     const textoOriginal = tituloPrincipal.textContent;
     escribirTexto(tituloPrincipal, textoOriginal, 80);
     
-    // Elementos a animar
+    
     const elementosAnimados = document.querySelectorAll('.habilidad, .proyecto, .contacto-item');
     
     elementosAnimados.forEach((elemento, index) => {
@@ -82,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Efecto de partículas en el fondo (opcional pero impactante)
+
 function crearParticulas() {
     const inicio = document.querySelector('.inicio');
     const numParticulas = 50;
@@ -104,7 +103,7 @@ function crearParticulas() {
         inicio.appendChild(particula);
     }
     
-    // Agregar animación de flotación
+
     if (!document.querySelector('#particulas-style')) {
         const style = document.createElement('style');
         style.id = 'particulas-style';
@@ -132,7 +131,7 @@ function crearParticulas() {
     }
 }
 
-// Efecto de hover suave solo en habilidades y contactos (NO en proyectos)
+
 document.querySelectorAll('.habilidad, .contacto-item').forEach(tarjeta => {
     tarjeta.addEventListener('mousemove', (e) => {
         const rect = tarjeta.getBoundingClientRect();
@@ -142,8 +141,8 @@ document.querySelectorAll('.habilidad, .contacto-item').forEach(tarjeta => {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
         
-        const rotateX = (y - centerY) / 40; // Más suave (era /20)
-        const rotateY = (centerX - x) / 40; // Más suave (era /20)
+        const rotateX = (y - centerY) / 40; 
+        const rotateY = (centerX - x) / 40; 
         
         tarjeta.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
     });
@@ -153,7 +152,7 @@ document.querySelectorAll('.habilidad, .contacto-item').forEach(tarjeta => {
     });
 });
 
-// Contador de habilidades animado
+
 function animarContador(elemento, inicio, fin, duracion) {
     let actual = inicio;
     const incremento = (fin - inicio) / (duracion / 16);
@@ -168,7 +167,6 @@ function animarContador(elemento, inicio, fin, duracion) {
     }, 16);
 }
 
-// Efecto de cursor personalizado (opcional)
 function cursorPersonalizado() {
     const cursor = document.createElement('div');
     cursor.className = 'cursor-personalizado';
@@ -200,13 +198,12 @@ function cursorPersonalizado() {
     });
 }
 
-// Inicializar efectos
 window.addEventListener('load', () => {
     crearParticulas();
-    // cursorPersonalizado(); // Descomenta si quieres el cursor personalizado
+   
 });
 
-// Efecto de escritura continua en el subtítulo
+
 const subtitulo = document.querySelector('.inicio p');
 if (subtitulo) {
     const textos = [
@@ -231,7 +228,6 @@ if (subtitulo) {
     subtitulo.style.transition = 'opacity 0.5s ease';
 }
 
-// Añadir efecto de progreso de lectura
 const barraProgreso = document.createElement('div');
 barraProgreso.style.cssText = `
     position: fixed;
